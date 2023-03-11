@@ -23,7 +23,6 @@ import shutil
 import argparse
 import tempfile
 import urllib.request
-import urllib.urlretrieve
 import zipfile
 
 TASKS = ["CoLA", "SST", "MRPC", "QQP", "STS", "MNLI", "QNLI", "RTE", "WNLI", "diagnostic"]
