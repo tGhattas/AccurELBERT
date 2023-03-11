@@ -5,9 +5,9 @@ export MODEL=albert_large
 # required
 export TEST_MODE="one"
 export TASK_NAME=RTE
-export GLUE_DIR=${PRE_DIR}BERT/params/GLUE
-export W_DIR=${PRE_DIR}BERT/params/W/${MODEL}
-export OUT_DIR=${PRE_DIR}BERT/myoutput/${MODEL}
+export GLUE_DIR=./glue_data
+export W_DIR=./ALBERT/TORCH
+export OUT_DIR=./myoutput/${MODEL}
 
 echo "Task:$TASK_NAME"
 if [ $1 = "1" ];then
