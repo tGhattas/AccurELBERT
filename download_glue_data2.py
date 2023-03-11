@@ -23,6 +23,7 @@ import shutil
 import argparse
 import tempfile
 import urllib.request
+import urllib.urlretrieve
 import zipfile
 
 TASKS = ["CoLA", "SST", "MRPC", "QQP", "STS", "MNLI", "QNLI", "RTE", "WNLI", "diagnostic"]
@@ -62,8 +63,8 @@ def format_mrpc(data_dir, path_to_data):
         try:
             mrpc_train_file = os.path.join(mrpc_dir, "msr_paraphrase_train.txt")
             mrpc_test_file = os.path.join(mrpc_dir, "msr_paraphrase_test.txt")
-            URLLIB.urlretrieve(MRPC_TRAIN, mrpc_train_file)
-            URLLIB.urlretrieve(MRPC_TEST, mrpc_test_file)
+            urllib.urlretrieve(MRPC_TRAIN, mrpc_train_file)
+            urllib.urlretrieve(MRPC_TEST, mrpc_test_file)
         except urllib.error.HTTPError:
             print("Error downloading MRPC")
             return
@@ -79,7 +80,7 @@ def format_mrpc(data_dir, path_to_data):
             test_fh.write("%d\t%s\t%s\t%s\t%s\n" % (idx, id1, id2, s1, s2))
 
     try:
-        URLLIB.urlretrieve(TASK2PATH["MRPC"], os.path.join(mrpc_dir, "dev_ids.tsv"))
+        urllib.urlretrieve(TASK2PATH["MRPC"], os.path.join(mrpc_dir, "dev_ids.tsv"))
     except KeyError or urllib.error.HTTPError:
         print("\tError downloading standard development IDs for MRPC. You will need to manually split your data.")
         return
