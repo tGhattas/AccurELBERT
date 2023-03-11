@@ -1,7 +1,7 @@
 {
 	"model_name": "al_large",
-	"my_out_dir": "/home/xiekeli/albert_tran/examples/stat_out/",
-	"exit_config_path": "/home/xiekeli/BERT/params/W/albert_large/new/exit_config.json",
+	"my_out_dir": "./stat_out/",
+	"exit_config_path": "./exit_config.json",
 	"weight_name": "dyn",
 	"thres_name": "bias_1",
 	"margin": 0.0,
